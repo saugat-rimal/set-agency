@@ -1,0 +1,202 @@
+/* default global css */
+
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;900&family=Inter:wght@400;600;700;800;900&display=swap');
+
+ :root{
+
+   --color-dark: #021019;
+   --color-light: #f4f4f4;
+   --color-primary: #fd308f;
+   --color-primary-glare: #fd89bf;
+   --color-secondary: #00ffcf;
+
+   --space-0: -10rem;
+   --space-xs: clamp(0.75rem, calc(0.68rem + 0.34vw), 0.94rem);
+   --space-s: clamp(1.00rem, calc(0.91rem + 0.45vw), 1.25rem);
+   --space-m: clamp(1.50rem, calc(1.36rem + 0.68vw), 1.88rem);
+   --space-l: clamp(2.00rem, calc(1.82rem + 0.91vw), 2.50rem);
+   --space-xl: clamp(3.00rem, calc(2.73rem + 1.36vw), 3.75rem);
+   --space-2xl: clamp(5.00rem, calc(4.55rem + 2.27vw), 6.25rem);
+   --space-3xl: clamp(7rem, calc(9.09rem + 4.55vw), 8.75rem);
+
+  
+   --size-step-0: clamp(1.00rem, calc(0.91rem + 0.45vw), 1.25rem);
+   --size-step-1: clamp(1.33rem, calc(1.11rem + 1.10vw), 1.94rem);
+   --size-step-2: clamp(1.78rem, calc(1.33rem + 2.23vw), 3.00rem);
+   --size-step-3: clamp(2.37rem, calc(1.54rem + 4.16vw), 4.66rem);
+   --size-step-4: clamp(3.16rem, calc(1.68rem + 7.38vw), 7.22rem);
+   --size-step-5: clamp(4.21rem, calc(1.67rem + 12.68vw), 11.18rem);
+
+   --font-base: "Inter","Segoe UI","Helvetica Neue",Arial,sans-serif;
+   --font-display:'Azeret Mono', monospace;
+
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--color-light);
+
+ }
+
+ ::before, ::after {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+ }
+
+ .color--white{
+   color: var(--color-light);
+ }
+
+ .color--red{
+   color: var(--color-primary);
+ }
+
+ .color--green{
+   color: var(--color-secondary);
+   font-style: italic;
+ }
+
+ body{
+    text-rendering: optimizeSpeed;
+    font-size: var(--size-step-0);
+    font-family: var(--font-base);
+    line-height: 1.5;
+    background: var(--color-dark);
+    color: var(--color-light);
+    background-image: linear-gradient(198deg,rgba(196,23,104,.2441570378151261) 0,#021019 61%);
+
+ }
+
+ a{
+   color: var(--color-light);
+   text-decoration-color: var(--color-primary);
+   text-decoration-thickness: 3px;
+ }
+
+ a.link {
+   color: var(--color-light);
+   text-decoration-color: var(--color-secondary);
+   text-decoration-thickness: 3px;
+ }
+
+
+/* css started */
+
+.section--home{
+   padding: var(--space-2xl) var(--space-m);
+}
+
+div.image--home > img {
+    width: calc(10% + 4em);
+    max-width: 198px;
+ }
+
+.heading--home{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+}
+ 
+ .sentence{
+   padding-right: var(--space-m);
+   word-spacing: var(--space-0);
+
+ }
+
+ .sentence span.h1{
+   font-size: var(--size-step-5);
+   font-family: var(--font-display);
+   font-weight: 900;
+   transition: all 0.3s cubic-bezier(0.45, 0.05, 0.22, 1.3) 0s;
+   line-height: var(--size-step-5);
+ }
+
+ .sentence span.h1:hover{
+   font-size: var(--size-step-5);
+   font-family: var(--font-display);
+   font-weight: 400;
+   cursor:ew-resize;
+ }
+
+ .content--description {
+   max-width: 1000px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+
+.content--description > h2{
+font-family: var(--font-base);
+font-size: var(--size-step-2);
+line-height: var(--size-step-2);
+margin-top: - calc(var(--size-step-5) + var(--size-step-5));
+}
+
+div.paragraph--description{
+   max-width: 530px;
+}
+
+.paragraph--description > p {
+   font-size: var(--size-step-0);
+}
+
+
+/* animation */
+section.section--home {
+    transform: translateY(1rem);
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.45,.05,.22,1.3); 
+   
+}
+
+section.section--home > .image--home{
+   animation-delay: .6s;
+}
+
+section.section--home > .heading--home > h1{
+   animation-delay: 3s;
+}
+
+section.section--home > .content--description {
+   animation-delay: 10s;
+}
+
+
+
+@keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+   
+ }
+ 
+ @-moz-keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+   
+ }
+ 
+ @-webkit-keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+ }
+ 
+ @-o-keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+ }
+ 
+ @-ms-keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1; }
+ }
+
+
+ @media only screen and (min-width: 1500px) {
+   .section--home{ 
+      margin: 0 calc(var(--size-step-5) + var(--size-step-4));
+   }
+ }
