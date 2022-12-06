@@ -44,6 +44,16 @@
    margin: 0;
  }
 
+ ::-moz-selection { /* Code for Firefox */
+  color: var(--color-dark);
+  background: var(--color-primary);
+}
+
+::selection {
+  color: var(--color-dark);
+  background: var(--color-primary);
+}
+
  .color--white{
    color: var(--color-light);
  }
@@ -84,7 +94,7 @@
 /* css started */
 
 .section--home{
-   padding: var(--space-2xl) var(--space-m);
+   padding: var(--space-xl) var(--space-m);
 }
 
 div.image--home > img {
@@ -110,6 +120,20 @@ div.image--home > img {
    font-weight: 900;
    transition: all 0.3s cubic-bezier(0.45, 0.05, 0.22, 1.3) 0s;
    line-height: var(--size-step-5);
+
+    opacity: 0;
+    transform: translateY(1rem);
+    animation-name: fadeIn;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.45,.05,.22,1.3);
+
+
+
+    transition: .3s cubic-bezier(.45,.05,.22,1.3);
+    transition-delay: .2s;
+
+
  }
 
  .sentence span.h1:hover{
@@ -117,6 +141,7 @@ div.image--home > img {
    font-family: var(--font-display);
    font-weight: 400;
    cursor:ew-resize;
+
  }
 
  .content--description {
@@ -135,7 +160,7 @@ margin-top: - calc(var(--size-step-5) + var(--size-step-5));
 }
 
 div.paragraph--description{
-   max-width: 530px;
+   max-width: 580px;
 }
 
 .paragraph--description > p {
@@ -154,45 +179,91 @@ section.section--home {
 }
 
 section.section--home > .image--home{
+  opacity: 0;
+  transform: translateY(1rem);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.45,.05,.22,1.3); 
    animation-delay: .6s;
 }
 
 section.section--home > .heading--home > h1{
-   animation-delay: 3s;
+  opacity: 0;
+  transform: translateY(1rem);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.45,.05,.22,1.3); 
+   animation-delay: 1s;
 }
 
 section.section--home > .content--description {
-   animation-delay: 10s;
+  opacity: 0;
+  transform: translateY(1rem);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.45,.05,.22,1.3); 
+   animation-delay: 1.5s;
 }
 
+ @keyframes fadeIn{
+  0%{
+      opacity: 0;
+      transform: translateY(2rem);
+  }
+  100%{
+      opacity: 1;
+      transform: none;
+  }
+  }
 
 
-@keyframes fadeIn {
-   0% { opacity: 0; }
-   100% { opacity: 1; }
-   
- }
- 
- @-moz-keyframes fadeIn {
-   0% { opacity: 0; }
-   100% { opacity: 1; }
-   
- }
- 
- @-webkit-keyframes fadeIn {
-   0% { opacity: 0; }
-   100% { opacity: 1; }
- }
- 
- @-o-keyframes fadeIn {
-   0% { opacity: 0; }
-   100% { opacity: 1; }
- }
- 
- @-ms-keyframes fadeIn {
-   0% { opacity: 0; }
-   100% { opacity: 1; }
- }
+  @-moz-keyframes fadeIn{
+    0%{
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+    100%{
+        opacity: 1;
+        transform: none;
+    }
+    }
+
+
+    @-webkit-keyframes fadeIn {
+      0%{
+          opacity: 0;
+          transform: translateY(2rem);
+      }
+      100%{
+          opacity: 1;
+          transform: none;
+      }
+      }
+
+      @-o-keyframes fadeIn {
+        0%{
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+        100%{
+            opacity: 1;
+            transform: none;
+        }
+        }
+
+        @-ms-keyframes fadeIn {
+          0%{
+            opacity: 0;
+            transform: translateY(2rem);
+        }
+        100%{
+            opacity: 1;
+            transform: none;
+        }
+        }
 
 
  @media only screen and (min-width: 1500px) {
